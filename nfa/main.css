@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+  padding-top: 5% !important;
+}
+td {
+  min-width: 30px;
+}
+.button.is-static {
+  cursor: no-drop;
+}
+.container {
+  padding-bottom: 40px;
+}
+.toast-container {
+  bottom: 10px;
+  position: fixed;
+  right: 10px;
+  z-index: 41;
+}

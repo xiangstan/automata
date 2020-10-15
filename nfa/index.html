@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>
+      NFA Implementation
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <link href="./main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container" id="main-container">
+      <div class="box">
+        <h2 class="is-size-2 has-text-weight-bold">Nondeterministic finite automaton</h2>
+      </div>
+      <div class="box">
+        <p class="notification is-info">
+          Use <strong>e</strong> for Epsilon
+        </p>
+        <div class="field is-horizontal" id="language-field">
+          <div class="field-label has-text-left is-normal">
+            <label class="label">Upload Language</label>
+          </div>
+          <div class="field-body">
+            <div class="field has-addons">
+              <div class="control is-expand">
+                <input class="input" id="input-file" type="file" />
+              </div>
+              <div class="control">
+                <a class="button is-info" id="button-load">Load</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal" id="input-field">
+          <div class="field-label has-text-left is-normal">
+            <label class="label">Input String</label>
+          </div>
+          <div class="field-body">
+            <div class="field has-addons">
+              <div class="control is-expand">
+                <input class="input" id="input-value" type="text" />
+              </div>
+              <div class="control">
+                <a class="button is-success is-static" id="button-run">
+                  Run
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Language Panel -->
+      <div class="box is-hidden" id="panel-display">
+        <div id="input-variables">
+          <ul>
+            <li>
+              <strong>Alphabet: </strong> <span id="var-lang"></span>
+            </li>
+            <li>
+              <strong>States: </strong> <span id="var-state"></span>
+            </li>
+            <li>
+              <strong>Start State: </strong> <span id="var-start"></span>
+            </li>
+            <li>
+              <strong>Accept State: </strong> <span id="var-accept"></span>
+            </li>
+            <li>
+              <strong>Transition Table: </strong><br />
+              <div id="var-trans"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Result Panel -->
+      <div class="box is-hidden" id="result-display">
+        <div class="content">
+          <h3 class="has-text-weight-bold">Simulation Result</h3>
+          <ul class="list" id="result-list"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="toast-container is-hidden" id="toast-container">
+      <p class="notification is-danger" id="err-note"></p>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
