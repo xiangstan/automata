@@ -1,0 +1,6 @@
+*~
+*.json
+.vscode
+.DS_Store
+test.*
+thumb.db
