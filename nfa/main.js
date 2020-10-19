@@ -93,7 +93,8 @@ const Nfa = {
   // get accept state
   GetAccept(data) {
     let temp = [];
-    accept = data.split("");
+    let cmt = data.split(";");
+    accept = cmt[0].trim().split("");
     for (let i = 0; i < accept.length; i++) {
       temp.push(this.states[parseInt(accept[i])])
     }
@@ -101,7 +102,8 @@ const Nfa = {
   },
   // get alphabet
   GetAlphabet(data) {
-    alphabet = data.split("");
+    let cmt = data.split(";");
+    alphabet = cmt[0].trim().split("");
     document.getElementById("var-lang").textContent = "{ " + alphabet.join(", ") + " }";
   },
   // get start state
@@ -121,7 +123,8 @@ const Nfa = {
     let temp = '<table class="table is-striped"><tr><td> </td><td>0</td><td>1</td><td>e</td></tr>';
     for (let i = 0; i < data.length; i ++) {
       if (removed.indexOf(i) === -1) {
-        let cell = data[i].split(" ");
+        let cmt = data[i].split(";");
+        let cell = cmt[0].trim().split(" ");
         transitions.push(cell);
         temp += `<tr><td>${this.states[transitions.length -1]}</td>`;
         for (let j = 0; j < cell.length; j++) {
@@ -206,7 +209,7 @@ const State = class {
     }
     else {
       //console.log(next)
-      if (next === "d") {
+      if (next === "d" || next === "x") {
         return -1;
       }
       else {
