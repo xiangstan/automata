@@ -95,6 +95,9 @@ const Nfa = {
     let temp = [];
     let cmt = data.split(";");
     accept = cmt[0].trim().split("");
+    accept = accept.filter(function (el) {
+      return el != " ";
+    });
     for (let i = 0; i < accept.length; i++) {
       temp.push(this.states[parseInt(accept[i])])
     }
